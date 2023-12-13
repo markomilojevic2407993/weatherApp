@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/layout', [HomeController::class, 'layout'])->name('layout');
+Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
