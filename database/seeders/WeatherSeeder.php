@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Weather;
 use Illuminate\Database\Seeder;
 
 class WeatherSeeder extends Seeder
