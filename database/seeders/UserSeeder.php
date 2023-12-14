@@ -14,13 +14,15 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+        $amount = $this->command->getOutput()->ask('Koliko korisnika zelis uneti u DB', 1);
+        $pass = $this->command->getOutput()->ask('Koja sifra treba biti', 123456789);
         $faker = Factory::create('SR_RS');
 
-        for ($i = 0; $i < 500; ++$i) {
+        for ($i = 0; $i < $amount; ++$i) {
             User::create([
                 'name' => $faker->name,
                 'email' => $faker->email,
-                'password' => Hash::make('12345678'),
+                'password' => Hash::make($pass),
                ]);
         }
     }
